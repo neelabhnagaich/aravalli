@@ -1,0 +1,265 @@
+{/*
+    <div class="container productsection">
+        <h2 class='text-center'>Our Products</h2>
+
+        <div class="container">
+            <div class="row ">
+
+                <div class="card col-sm-4" style={{width: '18rem'}}>
+                    <img src={cloth} class="card-img-top" alt="..." />
+                    <div class="card-body container">
+                        <h5 class="card-title text-center">Aravalli Women top</h5>
+                        <h6 class="text-center">&#8377; 400</h6>
+                        <a href="#" class="btn btn-custom ">View Details</a>
+                    </div>
+                </div>
+
+                <div class="card col-sm-4" style={{width: '18rem'}}>
+                    <img src={cloth} class="card-img-top" alt="..." />
+                    <div class="card-body container">
+                        <h5 class="card-title text-center">Aravalli Women top</h5>
+                        <h6 class="text-center">&#8377; 400</h6>
+                        <a href="#" class="btn btn-custom ">View Details</a>
+                    </div>
+                </div>
+
+                <div class="card col-sm-4" style={{width: '18rem'}}>
+                    <img src={cloth} class="card-img-top" alt="..." />
+                    <div class="card-body container">
+                        <h5 class="card-title text-center">Aravalli Women top</h5>
+                        <h6 class="text-center">&#8377; 400</h6>
+                        <a href="#" class="btn btn-custom ">View Details</a>
+                    </div>
+                </div>
+
+                <div class="card col-sm-4" style={{width: '18rem'}}>
+                    <img src={cloth} class="card-img-top" alt="..." />
+                    <div class="card-body container">
+                        <h5 class="card-title text-center">Aravalli Women top</h5>
+                        <h6 class="text-center">&#8377; 400</h6>
+                        <a href="#" class="btn btn-custom ">View Details</a>
+                    </div>
+                </div>
+
+                <div class="card col-sm-4" style={{width: '18rem'}}>
+                    <img src={cloth} class="card-img-top" alt="..." />
+                    <div class="card-body container">
+                        <h5 class="card-title text-center">Aravalli Women top</h5>
+                        <h6 class="text-center">&#8377; 400</h6>
+                        <a href="#" class="btn btn-custom ">View Details</a>
+                    </div>
+                </div>
+            </div>
+       
+
+        </div>
+
+
+
+    <div class="product-list container">
+
+    <div class="card card-custom" style={{width: '18rem'}}>
+        <img src={cloth} class="card-img-top" alt="..." />
+        <div class="card-body container">
+            <h5 class="card-title text-center">Aravalli Women top</h5>
+            <h6 class="text-center">&#8377; 400</h6>
+            <a href="#" class="btn btn-custom ">View Details</a>
+        </div>
+    </div>
+    <div class="card card-custom" style={{width: '18rem'}}>
+        <img src={cloth} class="card-img-top" alt="..." />
+        <div class="card-body container">
+            <h5 class="card-title text-center">Aravalli Women top</h5>
+            <h6 class="text-center">&#8377; 400</h6>
+            <a href="#" class="btn btn-custom ">View Details</a>
+        </div>
+    </div>
+
+    <div class="card card-custom" style={{width: '18rem'}}>
+        <img src={cloth} class="card-img-top" alt="..." />
+        <div class="card-body container">
+            <h5 class="card-title text-center">Aravalli Women top</h5>
+            <h6 class="text-center">&#8377; 400</h6>
+            <a href="#" class="btn btn-custom ">View Details</a>
+        </div>
+    </div>
+
+    <div class="card card-custom" style={{width: '18rem'}}>
+        <img src={cloth} class="card-img-top" alt="..." />
+        <div class="card-body container">
+            <h5 class="card-title text-center">Aravalli Women top</h5>
+            <h6 class="text-center">&#8377; 400</h6>
+            <a href="#" class="btn btn-custom ">View Details</a>
+        </div>
+    </div>
+
+    <div class="card card-custom" style={{width: '18rem'}}>
+        <img src={cloth} class="card-img-top" alt="..." />
+        <div class="card-body container">
+            <h5 class="card-title text-center">Aravalli Women top</h5>
+            <h6 class="text-center">&#8377; 400</h6>
+            <a href="#" class="btn btn-custom ">View Details</a>
+        </div>
+    </div>
+    <div class="card card-custom" style={{width: '18rem'}}>
+        <img src={cloth} class="card-img-top" alt="..." />
+        <div class="card-body container">
+            <h5 class="card-title text-center">Aravalli Women top</h5>
+            <h6 class="text-center">&#8377; 400</h6>
+            <a href="#" class="btn btn-custom ">View Details</a>
+        </div>
+    </div>
+
+
+    </div>
+
+
+    </div>
+      */}
+
+
+
+
+
+      -------------
+
+
+
+      {
+        
+        docs && docs.map((doc)=>{
+             <div class="card-custom">
+             <Link to={"/product/1"}>
+                 <img class="prod-img" src={doc.url} alt="Flowers in Chania" />
+                 </Link>
+                 <div class="card-body-custom">
+                     <Link to={"/product/1"}>
+                         <h5 class="card-title text-center">Aravalli Women top</h5>
+                     </Link>
+                     <h6 class="text-center">&#8377; 400</h6>
+                        
+                 </div>
+             </div>
+
+        })}
+
+        </div>
+        
+
+      
+    </div>
+  )
+
+
+
+}
+
+-----------------------------
+
+
+import React, {useState} from 'react';
+import useStorage from '../hooks/useStorage';
+import { projectFirestore, projectStorage, timeStamp } from "../firebase/config";
+
+
+const Admin = ()=>{
+
+  const [file, setFile] = useState(null);
+  const [error, setError] = useState(null);
+  const [progress, setProgress]  = useState(0);
+  const [url, setUrl]  = useState(null);
+
+  const types = ['image/png', 'image/jpg','image/jpeg']
+
+  //const {url, progress} = useStorage(file)
+ 
+  
+  
+
+  const changeHandler = (e)=>{
+
+    let selected = e.target.files[0];
+    console.log(selected);
+    if(selected && types.includes(selected.type)){
+      setFile(selected)
+
+      
+    }
+    else{
+      setFile(null)
+      setError('Please select a image file')
+      console.log("error");
+
+    }
+    
+  }
+
+  const handleSubmit = (e)=>{
+    e.preventDefault();
+
+    console.log("submitted");
+
+    if(file){
+      const storageRef = projectStorage.ref(file.name);
+
+      storageRef.put(file).on('state_changed',(snap)=>{
+          let percentage = (snap.bytesTransferred / snap.totalBytes ) *100;
+          setProgress(percentage)
+          console.log("changing");
+      },(err)=>{
+          setError(err)
+      },async ()=>{
+          // this gets fired when upload get complete and we get the url
+          const url = await storageRef.getDownloadURL();
+          setUrl(url)
+          console.log(url);
+
+          // after getting the url we wanna save the url to database
+
+          const collectionRef = projectFirestore.collection('images')
+          const createdAt= timeStamp()
+          collectionRef.add({
+            createdAt,
+            url
+
+          })
+          setFile(null)
+      })
+
+      
+
+    }
+    else{
+      console.log("no file selected");
+
+    }
+
+   
+        
+
+  }
+
+  return(
+    <div>
+      {file && 
+        <div className="progress-baar" style={{width:progress + '%'}}> 
+          
+        </div>
+       }
+     <h1>Admin </h1>
+     <form onSubmit={handleSubmit}>
+       <input type="file" onChange={changeHandler} />
+       <input type="submit" />
+       
+     </form>
+
+     
+
+    </div>
+
+  )
+
+}
+
+
+export default Admin;
